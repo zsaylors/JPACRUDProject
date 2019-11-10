@@ -33,9 +33,27 @@
 	</c:forEach>
 	<BR><BR><BR>
 	<c:out value="${memes[fn:length(memes)-1].animalType}"/> --%>
+<c:if test="${memeError == false}">
+<div class="container most__recent">
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+	  <strong>no results!</strong> try a different search.
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+</div>
+</c:if>
 
-
-
+<c:if test="${deleteMessage == false}">
+<div class="container most__recent">
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+	  <strong>you did it!</strong> meme deleted.
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+</div>
+</c:if>
 
 <div class="container most__recent">
     <div class="row">

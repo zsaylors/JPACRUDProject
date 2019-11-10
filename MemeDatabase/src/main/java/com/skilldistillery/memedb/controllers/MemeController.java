@@ -23,16 +23,7 @@ public class MemeController {
 		model.addAttribute("memes", memes);
 		return "index";
 	}
-	
-//	@RequestMapping(path = "getMeme.do", params = "getMemeById", method = RequestMethod.POST) 
-//	public ModelAndView getMeme(int getMemeById) {
-//		ModelAndView mv = new ModelAndView();
-//		Memes meme = dao.findById(getMemeById);
-//		mv.addObject("meme", meme);
-//		mv.setViewName("meme/show");
-//		return mv;
-//	}
-	
+
 	@RequestMapping(path = "search.do", params = "keyword", method = RequestMethod.GET)
 	public ModelAndView getFilmBySearch(@RequestParam("keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
@@ -42,7 +33,11 @@ public class MemeController {
 			mv.addObject("searchTerms", keyword);
 			mv.setViewName("meme/resultsByKeywords");
 		} else {
+			boolean error = false;
+			List<Memes> memes = dao.findAll();
 			mv.setViewName("index");
+			mv.addObject("memes", memes);
+			mv.addObject("memeError", error);
 		}
 		return mv;
 	}
@@ -76,11 +71,20 @@ public class MemeController {
 	
 	@RequestMapping(path = "delete.do", params = "deleteById", method = RequestMethod.POST)
 	public ModelAndView deleteMeme(int deleteById, Memes meme) {
-		boolean foundMeme = dao.delete(deleteById);
 		ModelAndView mv = new ModelAndView();
-		List<Memes> updateMemes = dao.findAll();
-		mv.addObject("memes", updateMemes);
-		mv.setViewName("index");
+		try {
+			boolean foundMeme = dao.delete(deleteById);
+			List<Memes> updateMemes = dao.findAll();
+			boolean deleteMessage = false;
+			mv.addObject("memes", updateMemes);
+			mv.addObject("deleteMessage", deleteMessage);
+			mv.setViewName("index");
+		}
+		catch (Exception e) {
+			List<Memes> memes = dao.findAll();
+			mv.setViewName("index");
+			mv.addObject("memes", memes);
+		}
 		return mv;
 	}
 }
