@@ -48,7 +48,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `memesdb`;
-INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (1, NULL, NULL, NULL, DEFAULT, NULL, NULL, DEFAULT);
+INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (1, 'Not Today', 'I\'m tired', NULL, '#ffffff', NULL, NULL, 'sloth');
+INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (2, 'cats', 'pushing', 'https://i.ytimg.com/vi/ccK3usCWmTo/maxresdefault.jpg', '#ffffff', NULL, NULL, 'cat');
 
 COMMIT;
 

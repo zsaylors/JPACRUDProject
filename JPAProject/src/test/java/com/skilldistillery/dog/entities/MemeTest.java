@@ -12,16 +12,19 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class DogTest {
+import com.skilldistillery.memes.entities.Memes;
+
+class MemeTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Dog dog;
+	private Memes meme;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("Doggos");
+		emf = Persistence.createEntityManagerFactory("MemesPU");
 	}
 
 	@AfterAll
@@ -32,18 +35,47 @@ class DogTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		dog = em.find(Dog.class, 1);
+		meme = em.find(Memes.class, 2);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
 	}
-
+	
 	@Test
-	void test() {
-		assertNotNull(dog);
-		assertEquals("Fred", dog.getName());
+	@DisplayName("Checks if the top quote matches db item")
+	void test1() {
+		assertEquals("cats", meme.getTopQuote());
+	}
+	
+	@Test
+	@DisplayName("Checks if the bottom quote matches db item")
+	void test2() {
+		assertEquals("pushing", meme.getBottomQuote());
+	}
+	
+	@Test
+	@DisplayName("Checks if img url is valid")
+	void test3() {
+		assertEquals("https://i.ytimg.com/vi/ccK3usCWmTo/maxresdefault.jpg", meme.getImgUrl());
+	}
+	
+	@Test
+	@DisplayName("Checks if the font hex matches db item")
+	void test4() {
+		assertEquals("#ffffff", meme.getFontColor());
 	}
 
+	@Test
+	@DisplayName("Checks if generated_img is null or not and matches db")
+	void test5() {
+		assertEquals(null, meme.getGeneratedImageUrl());
+	}
+	
+	@Test
+	@DisplayName("Checks if animal type is valid")
+	void test6() {
+		assertEquals("cat", meme.getAnimalType().toLowerCase());
+	}
 }

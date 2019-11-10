@@ -6,17 +6,17 @@
 
 
 <!--   change persistance name later....... -->
-  <persistence-unit name="Doggos">
+  <persistence-unit name="MemesPU">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 	
 	<!--  Class Definitions -->
-	<class>com.skilldistillery.jpavideostore.entities.Dog</class>
+	<class>com.skilldistillery.jpavideostore.entities.Meme</class>
 	
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dogdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/memesdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
       <property name="javax.persistence.jdbc.user" value="groot"/>
-      <property name="javax.persistence.jdbc.password" value="groot" />
+      <property name="javax.persistence.jdbc.password" value="iamgroot" />
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
       <property name="hibernate.show_sql" value="false" />
