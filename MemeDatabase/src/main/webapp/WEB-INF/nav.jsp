@@ -39,11 +39,11 @@
 		      <div class="modal-body"> 
 		        <form action="add.do" method="POST">
 		        	<br>top text:
-					<input class="form-control" type="text" name="topQuote" placeholder="Top text"> 
+					<input class="form-control" type="text" maxlength="254" name="topQuote" placeholder="Top text"> 
 					<br>bottom text:
-					<input class="form-control" type="text" name="bottomQuote" placeholder="Bottom text">
+					<input class="form-control" type="text" maxlength="254" name="bottomQuote" placeholder="Bottom text">
 					<br>image url:
-					<input class="form-control" type="text" name="imgUrl" placeholder="Img URL">
+					<input class="form-control" type="text" maxlength="1000" name="imgUrl" placeholder="Img URL">
 					<br>font color:
 					<select name="fontColor" class="form-control">
 								<option value="#ffffff">White</option>

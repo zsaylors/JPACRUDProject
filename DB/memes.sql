@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `memes` ;
 
 CREATE TABLE IF NOT EXISTS `memes` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `top_quote` VARCHAR(45) NULL,
+  `top_quote` VARCHAR(255) NULL,
   `bottom_quote` VARCHAR(255) NULL,
   `img_url` TEXT(1000) NULL,
   `font_color` SET('#ffffff', '#73c36d', '#c12626', '#60a9ff', '#f478ac', '#d5e83f') NOT NULL DEFAULT '#ffffff',

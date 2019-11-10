@@ -60,18 +60,14 @@
 		      <div class="modal-body"> 
 		        <form action="update.do" method="POST">
 				<input type="hidden" name="updateById" value="${meme.id}"> 
-				<input class="form-control" type="text" name="topQuote" value="${meme.topQuote}">
-				<input class="form-control" type="text" name="bottomQuote" value="${meme.bottomQuote}">
-				<input class="form-control" type="text" name="imgUrl" value="${meme.imgUrl}">
-					<select name="fontColor" class="form-control">
-						<!-- 		<option value="#ffffff">White</option>
-								<option value="#73c36d">Green</option>
-								<option value="#60a9ff">Blue</option>
-								<option value="#d5e83f">Yellow</option>
-								<option value="#c12626">Red</option>
-								<option value="#f478ac">Pink</option>
-								 -->
-												    		
+				<br>top text:
+				<input class="form-control" type="text" maxlength="255" name="topQuote" value="${meme.topQuote}">
+				<br>bottom text:
+				<input class="form-control" type="text" maxlength="255" name="bottomQuote" value="${meme.bottomQuote}">
+				<br>image url:
+				<input class="form-control" type="text" maxlength="1000" name="imgUrl" value="${meme.imgUrl}">
+				<br>font color:
+				<select name="fontColor" class="form-control">		    		
 							    <option value="#ffffff" ${meme.fontColor == '#ffffff' ? 'selected' : ''}>White</option>
 							    <option value="#73c36d" ${meme.fontColor == '#73c36d' ? 'selected' : ''}>Green</option>
 							    <option value="#60a9ff" ${meme.fontColor == '#60a9ff' ? 'selected' : ''}>Blue</option>
@@ -79,7 +75,7 @@
 							    <option value="#c12626" ${meme.fontColor == '#c12626' ? 'selected' : ''}>Red</option>
 							    <option value="#f478ac" ${meme.fontColor == '#f478ac' ? 'selected' : ''}>Pink</option>
 							  
-					</select>
+				</select>
 					<br>animal type:
 					<select name="animalType" class="form-control" selected="${meme.animalType}">
 				    			<option value="dog" ${meme.animalType == 'dog' ? 'selected' : ''}>🐕 Dog</option>
