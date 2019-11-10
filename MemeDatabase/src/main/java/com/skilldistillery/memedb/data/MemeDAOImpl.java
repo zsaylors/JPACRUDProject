@@ -21,6 +21,18 @@ public class MemeDAOImpl implements MemeDAO {
 	public Memes findById(int id) {
 		return em.find(Memes.class, id);
 	}
+	
+	@Override
+	public List<Memes> findByKeyword(String keyword) {
+		String memes = "SELECT meme from Memes meme "
+				+ "WHERE meme.topQuote LIKE :keyword||'%' "
+				+ "OR meme.bottomQuote LIKE :keyword||'%' "
+				+ "OR meme.animalType LIKE :keyword||'%' "
+				+ "ORDER BY meme.id DESC";
+		return em.createQuery(memes, Memes.class)
+				.setParameter("keyword", keyword)
+				.getResultList();
+	}
 
 	@Override
 	public List<Memes> findAll() {

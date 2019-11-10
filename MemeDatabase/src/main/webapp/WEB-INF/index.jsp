@@ -46,7 +46,7 @@
 	
 
 	
-	<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
+	<div class="col-lg-4 col-md-6 text-center d-flex justify-content-center" style="margin-bottom: 30px;">
 	<a href="getMeme.do?id=${meme.id}">
 		<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
 			<p class="text__top" style="color:#FFF"> ${meme.topQuote} </p>
@@ -55,11 +55,6 @@
             </a>
     </div>
 
-
-
-    
-    
-    
 	</c:forEach>
 	</div>
 </div>

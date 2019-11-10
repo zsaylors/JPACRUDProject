@@ -117,40 +117,6 @@
     </div>
 </div> 
 
-
-
-<!-- <img src="../../css/images/deleteImg.gif"> -->
-
-
-
-<!-- <div>
-${meme.topQuote}<br>
-${meme.bottomQuote}
-
-
-	Update<br>
-	<form action="update.do" method="POST">
-		<input type="hidden" name="updateById" value="${meme.id}"> 
-		<input class="form-control" type="text" name="topQuote" placeholder="Top text">
-		<input class="form-control" type="text" name="bottomQuote" placeholder="Bottom text">
-		<input class="form-control" type="text" name="imgUrl" placeholder="Img URL">
-		<input class="form-control" type="text" name="fontColor" placeholder="Font color">
-		<input class="form-control" type="text" name="animalType" placeholder="Type of animal">
-		<input class="btn btn-outline-success" type="submit" value="Submit"><br>	
-	</form>
-	
-	Delete:<br>
-	<form action="delete.do" method="POST">
-		<input type="hidden" name="deleteById" value="${meme.id}">
-		<input class="btn btn-outline-success" type="submit" value="Delete this meme!"><br>	
-	</form>
-	
-
-</div> -->
-
-
-
-
 <%@ include file="../footer.jsp" %>
 
 	<!-- Optional JavaScript -->

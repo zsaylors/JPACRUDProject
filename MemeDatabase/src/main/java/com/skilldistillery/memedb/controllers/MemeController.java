@@ -33,6 +33,20 @@ public class MemeController {
 //		return mv;
 //	}
 	
+	@RequestMapping(path = "search.do", params = "keyword", method = RequestMethod.GET)
+	public ModelAndView getFilmBySearch(@RequestParam("keyword") String keyword) {
+		ModelAndView mv = new ModelAndView();
+		List<Memes> k = dao.findByKeyword(keyword);
+		if (k.size() != 0) {   // a testing sysout before this line will break the code for some reason (if null)?  Don't add one.
+			mv.addObject("memes", k);
+			mv.addObject("searchTerms", keyword);
+			mv.setViewName("meme/resultsByKeywords");
+		} else {
+			mv.setViewName("index");
+		}
+		return mv;
+	}
+	
 	@RequestMapping(path = "getMeme.do", method = RequestMethod.GET) 
 	public ModelAndView getMeme(int id) {
 		ModelAndView mv = new ModelAndView();

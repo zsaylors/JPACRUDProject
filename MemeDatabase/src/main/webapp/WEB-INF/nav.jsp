@@ -15,8 +15,11 @@
 		<button type="button" class="btn btn-success btn-sm btn-shadow px-3 my-2 ml-0 text-left nav__links" data-toggle="modal" data-target="#addmodal">
 		  add a meme!
 		</button>
-			<a href="#!" class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left nav__links">
-				search memes</a>
+		<button type="button" class="btn btn-danger btn-sm btn-shadow px-3 my-2 ml-0 text-left nav__links" data-toggle="modal" data-target="#searchmodal">
+		  search memes!
+		</button>
+<!-- 			<a href="#!" class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left nav__links">
+				search memes</a> -->
 		</div>
 	</div>
 		
@@ -45,4 +48,29 @@
 		    </div>
 		  </div>
 		</div> 
+		
+		<div class="modal fade" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="searchTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="addmodalTitle">search</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body"> 
+		      	<form action="search.do" method="GET" id="searchmodal">
+					<div class="input-group">
+						<input class="form-control" type="text" name="keyword" placeholder="search by keyword"> 
+						<span class="input-group-btn"> 
+							<input class="btn btn-outline-success" type="submit" value="search">
+						</span>
+					</div>
+				</form>
+		     </div>
+		    </div>
+		  </div>
+		</div>
+		
+		
 </div>
