@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +76,7 @@
 		
 		    <br>
 		    
-		    <button type="button" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#deletememe" >
+		    <button type="button" onclick="snd.play()" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#deletememe" >
 		  delete meme
 		</button>
 		
@@ -100,7 +102,11 @@
 		                </p>
 		            </div>
 		    <!-- END GENERATED MEME -->
-		            
+
+<!-- 		            <audio autoplay>
+  						<source src="horse.ogg" type="audio/ogg">
+  						<source src="../../css/images/deletesound.mp3" type="audio/mpeg">
+					</audio> -->
 		        </div>
 		        <div class="modal-footer">
 				  	<form action="delete.do" method="POST" id="deletememe">
@@ -132,5 +138,8 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+	<script>
+    	var snd = new Audio("../../css/images/deletesound.mp3"); 
+	</script>
 </body>
 </html>
