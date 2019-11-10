@@ -5,31 +5,37 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema dogdb
+-- Schema memesdb
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `dogdb` ;
+DROP SCHEMA IF EXISTS `memesdb` ;
 
 -- -----------------------------------------------------
--- Schema dogdb
+-- Schema memesdb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `dogdb` DEFAULT CHARACTER SET utf8 ;
-USE `dogdb` ;
+CREATE SCHEMA IF NOT EXISTS `memesdb` DEFAULT CHARACTER SET utf8 ;
+USE `memesdb` ;
 
 -- -----------------------------------------------------
--- Table `dog`
+-- Table `memes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `dog` ;
+DROP TABLE IF EXISTS `memes` ;
 
-CREATE TABLE IF NOT EXISTS `dog` (
+CREATE TABLE IF NOT EXISTS `memes` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `top_quote` VARCHAR(45) NULL,
+  `bottom_quote` VARCHAR(255) NULL,
+  `img_url` TEXT(1000) NULL,
+  `font_color` VARCHAR(45) NOT NULL DEFAULT '#ffffff',
+  `generated_img` TEXT(1000) NULL,
+  `generated_data` JSON NULL,
+  `animal` VARCHAR(45) NOT NULL DEFAULT 'dog',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
 DROP USER IF EXISTS groot@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'groot'@'localhost' IDENTIFIED BY 'groot';
+CREATE USER 'groot'@'localhost' IDENTIFIED BY 'iamgroot';
 
 GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'groot'@'localhost';
 
@@ -38,11 +44,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `dog`
+-- Data for table `memes`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `dogdb`;
-INSERT INTO `dog` (`id`, `name`) VALUES (1, 'Fred');
+USE `memesdb`;
+INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (1, NULL, NULL, NULL, DEFAULT, NULL, NULL, DEFAULT);
 
 COMMIT;
 
