@@ -25,10 +25,10 @@ CREATE TABLE IF NOT EXISTS `memes` (
   `top_quote` VARCHAR(45) NULL,
   `bottom_quote` VARCHAR(255) NULL,
   `img_url` TEXT(1000) NULL,
-  `font_color` VARCHAR(45) NOT NULL DEFAULT '#ffffff',
+  `font_color` SET('#ffffff', '#73c36d', '#c12626', '#60a9ff', '#f478ac', '#d5e83f') NOT NULL DEFAULT '#ffffff',
   `generated_img` TEXT(1000) NULL,
   `generated_data` JSON NULL,
-  `animal` VARCHAR(45) NOT NULL DEFAULT 'dog',
+  `animal` SET('dog', 'cat', 'goat', 'giraffe', 'lion', 'headgehog', 'penguin', 'other') NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -48,8 +48,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `memesdb`;
-INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (1, 'Not Today', 'I\'m tired', NULL, '#ffffff', NULL, NULL, 'sloth');
-INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (2, 'cats', 'pushing', 'https://i.ytimg.com/vi/ccK3usCWmTo/maxresdefault.jpg', '#ffffff', NULL, NULL, 'cat');
+INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (1, 'Not Today', 'I\'m tired', NULL, '#ffffff', NULL, NULL, NULL);
+INSERT INTO `memes` (`id`, `top_quote`, `bottom_quote`, `img_url`, `font_color`, `generated_img`, `generated_data`, `animal`) VALUES (2, 'cats', 'pushing', 'https://i.ytimg.com/vi/ccK3usCWmTo/maxresdefault.jpg', '#ffffff', NULL, NULL, NULL);
 
 COMMIT;
 

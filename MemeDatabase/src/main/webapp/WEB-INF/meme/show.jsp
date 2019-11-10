@@ -30,10 +30,10 @@
             
     <!-- GENERATED MEME -->
             <div class="generated__meme" style="background-image: url(${meme.imgUrl})">
-                <p class="text__top" style="color:#FFF"> ${meme.topQuote}
+                <p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote}
                 </p>
                 
-                <p class="text__bottom" style="color:#FFF"> ${meme.bottomQuote}
+                <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote}
                 </p>
             </div>
     <!-- END GENERATED MEME -->
@@ -63,8 +63,34 @@
 				<input class="form-control" type="text" name="topQuote" value="${meme.topQuote}">
 				<input class="form-control" type="text" name="bottomQuote" value="${meme.bottomQuote}">
 				<input class="form-control" type="text" name="imgUrl" value="${meme.imgUrl}">
-				<input class="form-control" type="text" name="fontColor" value="${meme.fontColor}">
-				<input class="form-control" type="text" name="animalType" value="${meme.animalType}">
+					<select name="fontColor" class="form-control">
+						<!-- 		<option value="#ffffff">White</option>
+								<option value="#73c36d">Green</option>
+								<option value="#60a9ff">Blue</option>
+								<option value="#d5e83f">Yellow</option>
+								<option value="#c12626">Red</option>
+								<option value="#f478ac">Pink</option>
+								 -->
+												    		
+							    <option value="#ffffff" ${meme.fontColor == '#ffffff' ? 'selected' : ''}>White</option>
+							    <option value="#73c36d" ${meme.fontColor == '#73c36d' ? 'selected' : ''}>Green</option>
+							    <option value="#60a9ff" ${meme.fontColor == '#60a9ff' ? 'selected' : ''}>Blue</option>
+							    <option value="#d5e83f" ${meme.fontColor == '#d5e83f' ? 'selected' : ''}>Yellow</option>
+							    <option value="#c12626" ${meme.fontColor == '#c12626' ? 'selected' : ''}>Red</option>
+							    <option value="#f478ac" ${meme.fontColor == '#f478ac' ? 'selected' : ''}>Pink</option>
+							  
+					</select>
+					<br>animal type:
+					<select name="animalType" class="form-control" selected="${meme.animalType}">
+				    			<option value="dog" ${meme.animalType == 'dog' ? 'selected' : ''}>🐕 Dog</option>
+							    <option value="cat" ${meme.animalType == 'cat' ? 'selected' : ''}>🐈 Cat</option>
+							    <option value="goat" ${meme.animalType == 'goat' ? 'selected' : ''}>🐐 Goat</option>
+							    <option value="giraffe" ${meme.animalType == 'giraffe' ? 'selected' : ''}>🦒 Giraffe</option>
+							    <option value="lion" ${meme.animalType == 'lion' ? 'selected' : ''}>🦁 Lion</option>
+							    <option value="headgehog" ${meme.animalType == 'headgehog' ? 'selected' : ''}>🦔 Headgehog</option>
+							    <option value="penguin" ${meme.animalType == 'penguin' ? 'selected' : ''}>🐧 Penguin</option>
+							    <option value="other" ${meme.animalType == 'other' ? 'selected' : ''}>Other</option>
+					</select>
 		        <div class="modal-footer" id="updatemodal">
 				  <input class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left nav__links " type="submit" value="Update!"><br>	
 		        </div>

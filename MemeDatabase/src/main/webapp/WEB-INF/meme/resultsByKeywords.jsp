@@ -30,8 +30,8 @@
 	<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
 	<a href="getMeme.do?id=${meme.id}">
 		<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
-			<p class="text__top" style="color:#FFF"> ${meme.topQuote} </p>
-            <p class="text__bottom" style="color:#FFF"> ${meme.bottomQuote} </p>
+			<p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote} </p>
+            <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote} </p>
         </div>
             </a>
     </div>

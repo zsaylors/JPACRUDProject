@@ -46,56 +46,19 @@
 	
 
 	
-	<div class="col-lg-4 col-md-6 text-center d-flex justify-content-center" style="margin-bottom: 30px;">
-	<a href="getMeme.do?id=${meme.id}">
+	<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
+	 <a href="getMeme.do?id=${meme.id}"> 
 		<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
-			<p class="text__top" style="color:#FFF"> ${meme.topQuote} </p>
-            <p class="text__bottom" style="color:#FFF"> ${meme.bottomQuote} </p>
+			<p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote} </p>
+            <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote} </p>
         </div>
-            </a>
+        </a>
+          
     </div>
 
 	</c:forEach>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-<!-- 
-<div class="container most__recent">
-          <div class="row">
-                <div class="col lead mb-3 text-mono text-success">most recent memes:</div>
-          </div>
-        
-          <div class="row">
-              <div class="col">
-                  <div class="lead mb-3 text-mono text-success">1</div>
-              </div>
-              <div class="col">
-                  <div class="lead mb-3 text-mono text-success">2</div>
-              </div>
-               <div class="col">
-                  <div class="lead mb-3 text-mono text-success">3</div>
-              </div>
-          </div>
-                    <div class="row">
-              <div class="col">
-                  <div class="lead mb-3 text-mono text-success">4</div>
-              </div>
-              <div class="col">
-                  <div class="lead mb-3 text-mono text-success">5</div>
-              </div>
-               <div class="col">
-                  <div class="lead mb-3 text-mono text-success">6</div>
-              </div>
-          </div>   
-        </div>  -->
 
 <%@ include file="footer.jsp" %>
 

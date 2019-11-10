@@ -87,8 +87,8 @@ body {
     flex-direction: column;
     background-size: cover;
     background-position: center;
-    height: 50vh;
-    width: 50vh;
+	height: 40vh;
+    width: 40vh;
     font-size: 40px;
     overflow: hidden;
     border-color: white;
