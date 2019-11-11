@@ -12,6 +12,7 @@ The goal of this project was to create an SQL database and mapping entities to t
 ## How To Use
 ### **Create**
 ![alt text](https://i.ibb.co/LJzVzCP/Screen-Shot-2019-11-10-at-11-44-32-PM.png "start menu")
+
 "add a meme!" allows the user to firm the first step in CRUD - create.  A modal with a form will pop up asking for top text, bottom text, an image url, font color, and type of animal.  All fields are optional.  If the user wants to upload a meme without text, that works.  If a user uploads without a picture the program will throw a backend error, but the user will just get text (if entered) with no background image.
 
 ### **Read**
@@ -21,15 +22,16 @@ The meme is created by nesting text in a div element that has a background image
 
 ### **Update**
 ![alt text](https://i.ibb.co/dQPPpq4/Screen-Shot-2019-11-10-at-11-53-00-PM.png "update and delete menu")
+
 Update shows a similar menu to create.  However the form is populated with the current values to prevent user error when updating.  Any of the features may be updated.  When updated, the specific meme page will refresh with the update.
 
-## **Delete**
+### **Delete**
 A warning message pops up to make sure the user wants to delete the image, since it is permanent.  Once delete is selected the user will be returned to the main page with a success alert.
 
-## Download image
+### Download image
 The user may click the download button.  This will cause a modal to popup with a downloadable version of the meme.  
 
-## Search
+### Search
 On the main menu is a search function.  The search will look at any text that was entered as well as the animal type.  It will return all items that match the search through a `List<Memes>`.
 
 
