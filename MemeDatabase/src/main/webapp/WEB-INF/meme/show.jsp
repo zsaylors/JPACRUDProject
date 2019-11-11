@@ -29,7 +29,7 @@
         <div class="col text-center d-flex justify-content-center">
             
     <!-- GENERATED MEME -->
-            <div class="generated__meme" style="background-image: url(${meme.imgUrl})">
+            <div class="generated__meme" id="capture" style="background-image: url(${meme.imgUrl})">
                 <p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote}
                 </p>
                 
@@ -140,13 +140,42 @@
 		    </div>
 		  </div>
 		</div>
+		
+<br>
+ <button type="button" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#downloadmeme" >
+		  download meme!
+		</button>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="downloadmeme" tabindex="-1" role="dialog" aria-labelledby="downloadmemeTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="downloadmemeTitle">download meme</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      
+		      <div class="text-center" id="testingabcf">      
+
+		      </div>
+		      <br>
+		      <p class="text-center">right click and choose "Save Image As" to download.</p>
+		
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 
         </div>
     </div>
 </div> 
 
 <%@ include file="../footer.jsp" %>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -163,5 +192,18 @@
 	<script>
     	var snd = new Audio("../../css/images/deletesound.mp3"); 
 	</script>
+	<script src="../../css/html2canvas.js"></script>
+	<script>
+/* 		function doCapture() { */
+	  		html2canvas(document.querySelector("#capture"), {allowTaint: true, foreignObjectRendering: false}).then(canvas => {
+ 			 	document.querySelector("#testingabcf").appendChild(canvas);
+
+			});  	
+/* 		}  */
+
+
+
+	</script>
+	
 </body>
 </html>
