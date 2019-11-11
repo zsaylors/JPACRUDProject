@@ -23,7 +23,7 @@
 
 <div class="container most__recent">
     <div class="row">
-     	<div class="col-lg-4 col-md-6 lead mb-3 text-mono text-success"><p>results for "${searchTerms}":</p></div>
+     	<div class="col-lg-4 col-md-6 lead mb-3 text-mono text-success"><p>${fn:length(memes)} results for "${searchTerms}":</p></div>
     </div>
 	<div class="row">
 	<c:forEach items="${memes}" var="meme">

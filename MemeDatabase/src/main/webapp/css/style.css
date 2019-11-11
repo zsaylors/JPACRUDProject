@@ -95,6 +95,7 @@ body {
     border-width: 1px;
     border-style: solid;
     user-select: none;
+    line-height: 1em;
 }
 
 .meme__options {
@@ -106,7 +107,7 @@ body {
     word-wrap: break-word;
     flex-grow: 1;
     max-height: 80%;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .text__bottom {

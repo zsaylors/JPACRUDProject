@@ -21,8 +21,6 @@
 		<button type="button" class="btn btn-danger btn-sm btn-shadow px-3 my-2 ml-0 text-left nav__links" data-toggle="modal" data-target="#searchmodal">
 		  search memes!
 		</button>
-<!-- 			<a href="#!" class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left nav__links">
-				search memes</a> -->
 		</div>
 	</div>
 		

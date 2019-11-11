@@ -20,19 +20,7 @@
 <body>
 <%@ include file="nav.jsp" %>
 
-	<%-- <c:forEach items="${memes}" var="meme"> --%>
-<%-- 		<a href="getMeme.do?id=${meme.id}">
-		<input type="submit" value="${meme.animalType}">
-		</a> --%>
-		
-<%-- 		
-		<form action="getMeme.do" method="POST">
-			<input type="hidden" name="getMemeById" value="${meme.id}">
-			<input class="btn btn-outline-success" type="submit" value="${meme.animalType}"><br>	
-		</form>
-	</c:forEach>
-	<BR><BR><BR>
-	<c:out value="${memes[fn:length(memes)-1].animalType}"/> --%>
+
 <c:if test="${memeError == false}">
 <div class="container most__recent">
 	<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -61,25 +49,20 @@
     </div>
 	<div class="row">
 	<c:forEach items="${memes}" var="meme" begin="0" end = "5">
-	
-
-	
-	<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
-	 <a href="getMeme.do?id=${meme.id}"> 
-		<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
+		<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
+		 <a href="getMeme.do?id=${meme.id}"> 
+			<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
 			<p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote} </p>
             <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote} </p>
         </div>
         </a>
           
     </div>
-
 	</c:forEach>
 	</div>
 </div>
 
 <%@ include file="footer.jsp" %>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

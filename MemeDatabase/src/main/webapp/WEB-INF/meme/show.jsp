@@ -29,24 +29,23 @@
         <div class="col text-center d-flex justify-content-center">
             
     <!-- GENERATED MEME -->
-            <div class="generated__meme" id="capture" style="background-image: url(${meme.imgUrl})">
+             <div class="generated__meme" id="capture" style="background-image: url(${meme.imgUrl})">
                 <p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote}
                 </p>
                 
                 <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote}
                 </p>
-            </div>
+            </div> 
     <!-- END GENERATED MEME -->
             
         </div>
     
-    <!-- Update and Delete -->
+<!-- UPDATE BUTTON AND MOAL -->	
         <div class="col meme__options">
         
 		 <button type="button" class="btn btn-light btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#updatemodal">
 		  update meme!
 		</button>
-		
 		<!-- Modal -->
 		<div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="updatemodalTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -96,12 +95,11 @@
 		  </div>
 		</div> 
 		
+<!-- DELETE BUTTON AND MOAL -->		
 		    <br>
-		    
 		    <button type="button" onclick="snd.play()" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#deletememe" >
 		  delete meme
 		</button>
-		
 		<!-- Modal -->
 		<div class="modal fade" id="deletememe" tabindex="-1" role="dialog" aria-labelledby="deletememeTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -114,7 +112,6 @@
 		      </div>
 		      <div class="modal-body">           
 		          <div class="col text-center d-flex justify-content-center">
-		            
 		    <!-- GENERATED MEME -->
 		            <div class="generated__meme" style="background-image: url(../../css/images/deleteImg.gif)">
 		                <p class="text__top" style="color:#FFF"> WARNING!
@@ -124,11 +121,6 @@
 		                </p>
 		            </div>
 		    <!-- END GENERATED MEME -->
-
-<!-- 		            <audio autoplay>
-  						<source src="horse.ogg" type="audio/ogg">
-  						<source src="../../css/images/deletesound.mp3" type="audio/mpeg">
-					</audio> -->
 		        </div>
 		        <div class="modal-footer">
 				  	<form action="delete.do" method="POST" id="deletememe">
@@ -140,12 +132,12 @@
 		    </div>
 		  </div>
 		</div>
-		
-<br>
- <button type="button" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#downloadmeme" >
+
+<!-- DOWNLOAD BUTTON AND MOAL -->
+		<br>
+ 		<button type="button" class="btn btn-dark btn-shadow px-3 my-2 ml-0" data-toggle="modal" data-target="#downloadmeme" >
 		  download meme!
 		</button>
-		
 		<!-- Modal -->
 		<div class="modal fade" id="downloadmeme" tabindex="-1" role="dialog" aria-labelledby="downloadmemeTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -157,20 +149,14 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		      
-		      <div class="text-center" id="testingabcf">      
-
+		      <div class="text-center" id="downloadMemeAsPng">      
 		      </div>
 		      <br>
 		      <p class="text-center">right click and choose "Save Image As" to download.</p>
-		
-
 		      </div>
 		    </div>
 		  </div>
 		</div>
-
-
         </div>
     </div>
 </div> 
@@ -196,8 +182,7 @@
 	<script>
 /* 		function doCapture() { */
 	  		html2canvas(document.querySelector("#capture"), {allowTaint: true, foreignObjectRendering: false}).then(canvas => {
- 			 	document.querySelector("#testingabcf").appendChild(canvas);
-
+ 			 	document.querySelector("#downloadMemeAsPng").appendChild(canvas);
 			});  	
 /* 		}  */
 

@@ -50,24 +50,20 @@ public class MemeDAOImpl implements MemeDAO {
 	@Override
 	public Memes update(int id, Memes meme) {
 		Memes foundMeme = em.find(Memes.class, id);
-	//	em.getTransaction().begin();
 		foundMeme.setTopQuote(meme.getTopQuote());
 		foundMeme.setBottomQuote(meme.getBottomQuote());
 		foundMeme.setImgUrl(meme.getImgUrl());
 		foundMeme.setAnimalType(meme.getAnimalType());
 		foundMeme.setFontColor(meme.getFontColor());
 		em.flush();
-//		em.getTransaction().commit();
 		return foundMeme;
 	}
 
 	@Override
 	public boolean delete(int id) {
 		Memes foundMeme = em.find(Memes.class, id);
-	//	em.getTransaction().begin();
 		em.remove(foundMeme);
 		em.flush();
-	//	em.getTransaction().commit();
 		return (foundMeme == null);
 	}
 }
