@@ -1,5 +1,7 @@
 
 
-<center>![alt text](https://media3.giphy.com/media/3oEduVGyuRGuZXaqys/giphy.gif "pup-a-lup logo") </center>
+<center>
+![alt text](https://i.ibb.co/MB3nbnV/Screen-Shot-2019-11-10-at-11-12-51-PM.png "pup-a-lup logo") 
+</center>
 
 ## Week 9 Skill Distillery Homework
