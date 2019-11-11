@@ -17,7 +17,7 @@ public class MemeController {
 	@Autowired
 	public MemeDAO dao;
 	
-	@RequestMapping(path = "/")
+	@RequestMapping(path = {"/", "index.do"})
 	public String index(Model model) {
 		List<Memes> memes = dao.findAll();
 		model.addAttribute("memes", memes);

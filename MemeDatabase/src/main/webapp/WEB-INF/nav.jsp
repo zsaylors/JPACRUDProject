@@ -6,7 +6,7 @@
 <div class="navbar-dark text-white nav__bar">
 <!-- TITLE -->
 	<nav class="navbar px-0 navbar-expand-lg navbar-dark justify-content-center text-center">
-		<a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="index.do">
 			<p class="site__title">pup•a•lup
 				<p class="paws">🐾</p></p>
 			<p class="site__slogan">doggo and animal memes since 2019!</p> </a>

@@ -12,8 +12,14 @@
 	<title>Pupalup Memes</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
 		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/css/bootstrap4-neon-glow.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+<!-- 	<link rel="stylesheet" href="../css/css/bootstrap4-neon-glow.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"> -->
+	
+		<link href="<c:url value="/css/style.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/css/bootstrap4-neon-glow.min.css"/>" rel="stylesheet">
+	
+	
+	
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
 </head>
@@ -50,7 +56,7 @@
 	<div class="row">
 	<c:forEach items="${memes}" var="meme" begin="0" end = "5">
 		<div class="col text-center d-flex justify-content-center" style="margin-bottom: 30px;">
-		 <a href="getMeme.do?id=${meme.id}"> 
+		 <a href="getMeme.do?id=${meme.id}" style="text-decoration: none"> 
 			<div class="generated__meme" style="background-image: url(${meme.imgUrl})">
 			<p class="text__top" style="color:${meme.fontColor}"> ${meme.topQuote} </p>
             <p class="text__bottom" style="color:${meme.fontColor}"> ${meme.bottomQuote} </p>

@@ -11,8 +11,12 @@
 	<title>Pupalup Memes</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
 		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../css/css/bootstrap4-neon-glow.min.css">
-	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+<!--  <link rel="stylesheet" href="../../css/css/bootstrap4-neon-glow.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css"> -->
+	<link href="<c:url value="/css/style.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/css/bootstrap4-neon-glow.min.css"/>" rel="stylesheet">
+	
+	
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
 </head>
@@ -113,7 +117,8 @@
 		      <div class="modal-body">           
 		          <div class="col text-center d-flex justify-content-center">
 		    <!-- GENERATED MEME -->
-		            <div class="generated__meme" style="background-image: url(../../css/images/deleteImg.gif)">
+ 		            <div class="generated__meme" style="background-image: url(https://i.ibb.co/D9LtFxm/delete-Img.gif)"> 
+<%-- 		            <div class="generated__meme" style="background-image: <c:url value="/css/images/deleteImg.gif"/>"> --%>
 		                <p class="text__top" style="color:#FFF"> WARNING!
 		                </p>
 		                
@@ -176,7 +181,8 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 	<script>
-    	var snd = new Audio("../../css/images/deletesound.mp3"); 
+/*     	var snd = new Audio("../../css/images/deletesound.mp3");  */
+    	var snd = new Audio("<c:url value="/css/images/deletesound.mp3"/>"); 
 	</script>
 	<script src="../../css/html2canvas.js"></script>
 	<script>

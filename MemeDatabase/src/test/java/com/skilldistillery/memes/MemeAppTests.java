@@ -20,9 +20,4 @@ import com.skilldistillery.memedb.data.MemeDAOImpl;
 class MemeAppTests {
 	private MemeDAOImpl dao;
 	
-	@Test
-	@DisplayName("Testing getting meme by id")
-	public void test1() {
-		assertEquals("cat", dao.findById(1).getAnimalType());
-	}
 }
